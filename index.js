@@ -26,18 +26,18 @@ let box = 30;
 const createBox = function (amount) {
     for (let i = 0; i < amount; i += 1) {
         const max = 255;
-        const min = 0;
+        const low = 1;
         const colorOfBox = document.createElement("div");
         colorOfBox.style.height = `${box}px`;
         colorOfBox.style.width = `${box}px`;
+        box = box + 10;
         colorOfBox.style.backgroundColor = `rgb(
-            ${Math.round(Math.random() * (max - min) + min)},
-            ${Math.round(Math.random() * (max - min) + min)},
-            ${Math.round(Math.random() * (max - min) + min)}
+            ${Math.round(Math.random() * (max - low))},
+            ${Math.round(Math.random() * (max - low))},
+            ${Math.round(Math.random() * (max - low))}
           )`;
-
         boxes.append(colorOfBox);
-        box += 10;
+        
     }
 };
 
